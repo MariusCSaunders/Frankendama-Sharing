@@ -34,9 +34,10 @@ My outdated ERD can be seen below, followed by the updated version.
 <img align="right" src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDdraft2.png" alt="ERD Image"/>
 
 My original ERD was a 1-to-1 relationship-diagram and therefor I formated the diagram to produce two 1-to-Many relationship tables.
+
 ### Analysis of Testing
 ### Continuous Integration
-#### Jenkins Script
+### Jenkins Script
 
 ## Development
 
