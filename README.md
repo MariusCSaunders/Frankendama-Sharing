@@ -27,10 +27,11 @@
 ### Trello Board
 ### Entity Relationship Diagram
 My outdated ERD can be seen below, followed by the updated version.
-![old ERD image] (./images/QAprojectERDdraft1.png)
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDdraft1.png" alt="Old ERD"/>
 <br/>
-<div style="block;">
-<img src=".images/QAprojectERDdraft2.png" alt="ERD image"/>
+
+<div style="block;"> 
+<img align="right" src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDdraft2.png" alt="ERD Image"/>
 ### Analysis of Testing
 ### Continuous Integration
 #### Jenkins Script
