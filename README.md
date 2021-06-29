@@ -26,6 +26,11 @@
 ### Risk Assessment
 ### Trello Board
 ### Entity Relationship Diagram
+My outdated ERD can be seen below, followed by the updated version.
+![old ERD image] (./images/QAprojectERDdraft1.png)
+<br/>
+<div style="block;">
+<img src=".images/QAprojectERDdraft2.png" alt="ERD image"/>
 ### Analysis of Testing
 ### Continuous Integration
 #### Jenkins Script
