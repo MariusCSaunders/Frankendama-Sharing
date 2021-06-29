@@ -29,11 +29,13 @@
 My outdated ERD can be seen below, followed by the updated version.
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDdraft1.png" alt="Old ERD"/>
 <br/>
-
+My original ERD was a 1-to-1 relationship-diagram which is not suitable for this project so i remade the ERD as follows:
 <div style="block;"> 
 <img align="right" src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDdraft2.png" alt="ERD Image"/>
 
-My original ERD was a 1-to-1 relationship-diagram and therefor I formated the diagram to produce two 1-to-Many relationship tables.
+This is the current ERD for this project.
+
+Each Frankendama will have the 5 main parts for a build and each Frankendama has many companies assosciated for each part and each company has many shapes.
 
 ### Analysis of Testing
 ### Continuous Integration
