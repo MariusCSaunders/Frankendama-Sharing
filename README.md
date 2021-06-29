@@ -1,7 +1,7 @@
 # Frankendama Sharing
 
 ## Contents
-	* [Introduction](#introduction)
+* [Introduction](#introduction)
 	* [Objective](#objective)
 	* [Proposal](#proposal)
 * [Architecture](#architecture)
