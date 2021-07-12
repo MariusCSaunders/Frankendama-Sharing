@@ -35,7 +35,7 @@ My original ERD was a 1-to-1 relationship-diagram which is not suitable for this
 
 This is the current ERD for this project.
 
-Each Frankendama will have the 5 main parts for a build and each Frankendama has many companies assosciated for each part and each company has many shapes.
+Each Frankendama will have the 5 main parts for a build and each Frankendama has many companies assosciated for each part.
 
 ### Analysis of Testing
 ### Continuous Integration
