@@ -28,7 +28,7 @@ Which is made up of five parts:
 <li>Sword (The long part with the spike)</li>
 <li>String (Attaches the ball to the ken</li>
 <li>Bearing/Bead (Stops the ball coming off the string)</li>
-
+<br/>
 When a user of this toy creates a setup with each 5 parts from different companies, that is called a Frankendama.
 
 ### Objective
@@ -38,8 +38,11 @@ When a user of this toy creates a setup with each 5 parts from different compani
 
 ### Risk Assessment
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/RiskAssessment2.png" alt="Risk Assessment"/>
-### Trello Board
-### Entity Relationship Diagram
+
+###Trello Board
+
+###Entity Relationship Diagram
+
 My outdated ERD can be seen below, followed by the updated version.
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDdraft1.png" alt="Old ERD"/>
 <br/>
