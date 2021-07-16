@@ -19,7 +19,7 @@
 ## Introduction
 
 A kendama is a japanese skilltoy that looks like this:
-<img src="https://cascadejuggling.com/wp-content/uploads/2020/06/Sweets-Custom-v24-Watermelon-Kendama-1.jpg" alt"A kendama"/>
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/kendama.jpg" alt"A kendama"/>
 
 Which is made up of five parts:
 <li>Tama (The ball)</li>
