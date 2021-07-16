@@ -24,7 +24,7 @@
 ## Architecture
 
 ### Risk Assessment
-<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/RiskAssessment.png" alt="Risk Assessment"/>
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/RiskAssessment2.png" alt="Risk Assessment"/>
 ### Trello Board
 ### Entity Relationship Diagram
 My outdated ERD can be seen below, followed by the updated version.
