@@ -20,7 +20,7 @@
 
 A kendama is a japanese skilltoy that looks like this:
 <br/>
-<img src="images/Kendama.jpg" alt"A kendama"/>
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/Kendama.jpg" alt"A kendama"/>
 
 Which is made up of five parts:
 <li>Tama (The ball)</li>
