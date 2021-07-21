@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <h1>Home</h1>
+{% endblock title %}
+
+
+{% block body %}
+
+    {% for frank in frankendamas: %}
+        {{ "{0.id:0>2} | {0.title} | {0.description} | {0.tama} | {0.sarado} | {0.sword} | {0.string} | {bearing}".format(
+            frank, bearing = "✅" if frank.bearing else "❌"
+        ) }}
+        <br>
+        <a href="{{ url_for('update', id=task.id) }}"> Update </a>
+        <br>
+        <a href="{{ url_for('delete', id=task.id) }}"> Delete </a>
+        <br>
+        
+    {% endfor %}
+
+{% endblock body %}

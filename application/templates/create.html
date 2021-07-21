@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <h1>Create/Update</h1>
+{% endblock title %}
+
+{% block body %}
+    <form action="" method="POST">
+
+        {{ form.hidden_tag() }}
+        {{ form.title.label }} {{ form.title }}
+        <br>
+        {{ form.description.label }} {{ form.description }}
+        <br>
+        {{ form.tama.label }} {{ form.tama }}
+        <br>
+        {{ form.sarado.label }} {{ form.sarado }}
+        <br>
+        {{ form.sword.label }} {{ form.sword }}
+        <br>
+        {{ form.string.label }} {{ form.string }}
+        <br>
+        {{ form.bearing.label }} {{ form.bearing }}
+        <br>
+        {{ form.submit}}
+    </form>
+{% endblock body %}
