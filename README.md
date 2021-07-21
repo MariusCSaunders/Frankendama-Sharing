@@ -19,7 +19,8 @@
 ## Introduction
 
 A kendama is a japanese skilltoy that looks like this:
-<br/>
+<br>
+<br>
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/Kendama.png" alt="A kendama"/>
 
 Which is made up of five parts:
@@ -41,6 +42,9 @@ When a user of this toy creates a setup with each 5 parts from different compani
 
 ###Trello Board
 
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/UserStories.png" alt="User Stories"/>
+
+
 ###Entity Relationship Diagram
 
 My outdated ERD can be seen below, followed by the updated version.
@@ -48,7 +52,7 @@ My outdated ERD can be seen below, followed by the updated version.
 <br/>
 My original ERD was a Many-toMany relationship-diagram which is not suitable for this project so i remade the ERD as follows:
 <div style="block;"> 
-<img align="right" src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDdraft22.png" alt="ERD Image"/>
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDdraft22.png" alt="ERD Image"/>
 
 This is the current ERD for this project.
 
