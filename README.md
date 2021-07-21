@@ -6,7 +6,7 @@
 	* [Proposal](#proposal)
 * [Architecture](#architecture)
 	* [Risk Assessment](#risk-assessment)
-	* [Trello Board](#trello-board)
+	* [Trello Board](#Trello-Board)
 	* [Entity Relationship Diagram](#entity-relationship-diagram)
 	* [Test Analysis](#analysis-of-testing)
 	* [Continuous Integration](#continuous-integration)
@@ -41,7 +41,6 @@ When a user of this toy creates a setup with each 5 parts from different compani
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/RiskAssessment2.png" alt="Risk Assessment"/>
 
 ###Trello Board
-
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/UserStories.png" alt="User Stories"/>
 
 
