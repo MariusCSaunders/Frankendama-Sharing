@@ -7,16 +7,45 @@
 
 {% block body %}
 
-    {% for frank in frankendamas: %}
-        {{ "{0.id:0>2} | {0.title} | {0.description} | {0.tama} | {0.sarado} | {0.sword} | {0.string} | {bearing}".format(
-            frank, bearing = "✅" if frank.bearing else "❌"
-        ) }}
-        <br>
-        <a href="{{ url_for('update', id=task.id) }}"> Update </a>
-        <br>
-        <a href="{{ url_for('delete', id=task.id) }}"> Delete </a>
-        <br>
-        
-    {% endfor %}
+    <style>
+ 
+        td {
+            width: 150px;
+            text-align: center;
+            border: 1px solid black;
+            padding: 5px;
+         }
+   </style>
 
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Tama</th>
+                <th>Sarado</th>
+                <th>Sword</th>
+                <th>String Length(cm)</th>
+                <th>Bearing</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>    
+        <tbody>
+        {% for row in franks %}
+              <tr>
+                  <td>{{row.title}}</td>
+                  <td>{{row.description}}</td>
+                  <td>{{row.tama}}</td>
+                  <td>{{row.sarado}}</td>
+                  <td>{{row.sword}}</td>
+                  <td>{{row.string}}</td>
+                  <td>{{row.bearing}}</td>
+                  <td><a href="{{ url_for('update', id=row.id) }}"> Update </a></td>
+                  <td><a href="{{ url_for('delete', id=row.id) }}"> Delete </a></td>
+              </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+       
 {% endblock body %}

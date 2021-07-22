@@ -7,6 +7,7 @@
 {% block body %}
     <form action="" method="POST">
 
+        <br>
         {{ form.hidden_tag() }}
         {{ form.title.label }} {{ form.title }}
         <br>
@@ -22,6 +23,93 @@
         <br>
         {{ form.bearing.label }} {{ form.bearing }}
         <br>
+        <br>
         {{ form.submit}}
     </form>
+
+    <br>
+    <h3>Examples of Companies and thier shapes</h3>
+    <br>
+    <style>
+ 
+        td {
+            width: 150px;
+            text-align: center;
+            padding: 5px;
+         }
+   </style>
+
+    <table>
+        <thead>
+            <tr>
+                <th> KROM </th>
+                <th> SWEETS </th>
+                <th> ANALOG </th>
+                <th> SOL </th>
+                <th> CEREAL </th>
+                <th> SK </th>
+                <th> GT </th>
+                <th> NATIV </th>
+                <th> ISR </th>
+            </tr>
+        </thead>    
+        <tbody>
+        
+              <tr>
+                  <td>2GOOD</td>
+                  <td>BOOST</td>
+                  <td>SQUAB 2019</td>
+                  <td>1UP</td>
+                  <td>1.5</td>
+                  <td>LOMOND</td>
+                  <td>GT-II</td>
+                  <td>DAD</td>
+                  <td>BIG BROTHER</td>
+              </tr>
+              <tr>
+                <td>BL</td>
+                <td>PRIME</td>
+                <td>SQUAB 2020</td>
+                <td>VIBE</td>
+                <td>PERFORMER</td>
+                <td>BASELINE</td>
+                <td>GT-E1</td>
+                <td>CORWN</td>
+                <td>TETRA</td>
+            </tr>
+            <tr>
+                <td>AK</td>
+                <td>F3</td>
+                <td></td>
+                <td></td>
+                <td>ELEVATE</td>
+                <td>MOR</td>
+                <td>GT-TF</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>SLAYDAWG</td>
+                <td>DECADE</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>GT-BH</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>GT-AE</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 {% endblock body %}
