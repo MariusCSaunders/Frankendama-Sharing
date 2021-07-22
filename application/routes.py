@@ -8,9 +8,9 @@ from .forms import FrankForm
 @app.route('/home')
 def home():
 
-    frank = Frankendama.query.all()
+    franks = Frankendama.query.all()
     
-    return render_template("home.html", frank=frank)
+    return render_template("home.html", franks=franks)
 
 
 @app.route("/create", methods=["GET", "POST"]) 
@@ -18,7 +18,7 @@ def create():
     
     form = FrankForm()
 
-    if request.method == "POST":
+    if request.method == 'POST':
         new_frank = Frankendama(
             title=form.title.data,
             description=form.description.data,
@@ -37,22 +37,25 @@ def create():
 
         return render_template("create.html", form=form)
 
-@app.route("/updates/<int:id>", methods=["GET", "POST"])
+@app.route("/update/<id>", methods=["GET", "POST"])
 def update(id):
 
     frank = Frankendama.query.get(id)
     form = FrankForm()
 
-    if request.method == "POST":
-        frank.title = form.title.data,
-        frank.description=form.description.data,
-        frank.tama=form.tama.data,
-        frank.sarado=form.sarado.data,
-        frank.sword=form.sword.data,
-        frank.string=form.string.data,
-        frank.bearing=form.bearing.data
+    if form.validate_on_submit():
+
         
-        db.session.add(frank)
+        frank.title=form.title.data
+        frank.description=form.description.data
+        frank.tama=form.tama.data
+        frank.sarado=form.sarado.data
+        frank.sword=form.sword.data
+        frank.string=form.string.data
+        frank.bearing=form.bearing.data
+            
+        
+        db.session.add(frank)  
         db.session.commit()
 
         return redirect(url_for("home"))
@@ -60,4 +63,14 @@ def update(id):
     else:
 
         return render_template("create.html", form=form)
+
+
+@app.route("/delete/<int:id>")
+def delete(id):
+    frank = Frankendama.query.get(id)
+
+    db.session.delete(frank)
+    db.session.commit()
+
+    return redirect(url_for("home")) 
 
