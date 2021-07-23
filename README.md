@@ -43,11 +43,11 @@ When a user of this toy creates a setup with each 5 parts from different compani
 ### Risk Assessment
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/RiskAssessment3.png" alt="Risk Assessment"/>
 
-###Trello Board
+### Trello Board
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/UserStories.png" alt="User Stories"/>
 
 
-###Entity Relationship Diagram
+### Entity Relationship Diagram
 
 My outdated ERD can be seen below, followed by the updated version.
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDdraft1.png" alt="Old ERD"/>
