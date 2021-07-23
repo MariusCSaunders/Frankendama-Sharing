@@ -1,5 +1,13 @@
+#Marius Saunders
+#QA Project 1
+#Frankendama Sharing
+
+#Imports the needed modules
 from . import db
 
+#DB relationship is 1(Frankendama)-to-Many(Company)
+
+#Frankendama table with all the defined columns
 class Frankendama(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(25), nullable=False)
@@ -11,7 +19,7 @@ class Frankendama(db.Model):
     bearing = db.Column(db.String(3), nullable=False)
     companies = db.relationship('Company', backref='frankendama', lazy=True)
 
-
+#Company table with all the defined columns and Frankendama foreign Key
 class Company(db.Model):
     company_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(25), nullable=False)

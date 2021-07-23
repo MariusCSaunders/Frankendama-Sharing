@@ -1,9 +1,16 @@
+#Marius Saunders
+#QA Project 1
+#Frankendama Sharing
+
+#Imports all the needed modules
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, IntegerField
 from wtforms.validators import InputRequired, NumberRange, Length
 
+
+#Class that defines the form types and thier names with validators
 class FrankForm(FlaskForm):
-    title = StringField("What is title of the setup?", validators=[InputRequired()])
+    title = StringField("What is title of the setup?", validators=[InputRequired()]) 
     description = StringField("What is the description of your setup?", validators=[InputRequired()])
     tama = StringField("What type of tama?", validators=[InputRequired()])
     sarado = StringField("What type of sarado?", validators=[InputRequired()])

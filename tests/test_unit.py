@@ -1,3 +1,8 @@
+#Marius Saunders
+#QA Project 1
+#Frankendama Sharing
+
+#Imports the needed modules
 from flask_testing import TestCase
 from flask_sqlalchemy import SQLAlchemy
 from flask import url_for
@@ -6,14 +11,14 @@ import os
 from application import app, db
 from application.models import Company, Frankendama
 
-
+#Creates the base for all test cases
 class TestBase(TestCase):
 
     # Pass in testing configurations for the app. Here we use sqlite without a persistent database for our tests.
     def create_app(self):
 
         app.config.update(
-            SQLALCHEMY_DATABASE_URI="sqlite:///data.db",
+            SQLALCHEMY_DATABASE_URI="sqlite:///test.db",
             SECRET_KEY='TEST_SECRET_KEY',
             DEBUG=True,
             WTF_CSRF_ENABLED=False
