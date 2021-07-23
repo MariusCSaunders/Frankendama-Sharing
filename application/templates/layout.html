@@ -1,0 +1,22 @@
+<body>
+
+    <h1>Frankendama Sharing</h1></br>
+    <p>Welcome to the Frankendama sharing platform.</p>
+    <p>A Frankendama is the term used to describe a kendama made from individual parts from different companies. A kendama looks like this:</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW6Rw8w8XLC7RPA2bWqxCzADtG19J_DNK4fg&usqp=CAU"/>
+    
+
+
+    {% block title %}
+         
+    {% endblock title %}
+
+    <div class="navbar">
+        <a href="{{ url_for('home') }}"> Home </a>
+        <a href="{{ url_for('create') }}"> Create New </a>
+    </div>
+
+    <br>
+    {% block body %}
+    {% endblock body %}
+</body>
