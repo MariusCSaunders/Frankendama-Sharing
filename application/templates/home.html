@@ -41,11 +41,11 @@
                   <td>{{row.sarado}}</td>
                   <td>{{row.sword}}</td>
                   <td>{{row.string}}</td>
-                  <td>{{row.bearing}}</td>
+                  <td>{{row.bearing.lower().title()}}</td> <!--Methods() for formating the responce of Yes and No -->
                   <td>
                     {% for entry in comps %}
                         {% if entry.frankendama_id == row.id %}
-                            {{entry.name}}
+                            {{entry.name.upper()}}
                             <br>
                         {% endif %}
                     {% endfor %}

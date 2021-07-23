@@ -28,7 +28,7 @@ def create():
             sarado=form.sarado.data,
             sword=form.sword.data,
             string=form.string.data,
-            bearing=form.bearing.data,
+            bearing=form.bearing.data.lower().title()
         )
 
         db.session.add(new_frank)

@@ -8,7 +8,7 @@ class Frankendama(db.Model):
     sarado = db.Column(db.String(25), nullable=False)
     sword = db.Column(db.String(25), nullable=False)
     string = db.Column(db.String(25), nullable=False)
-    bearing = db.Column(db.String(5), nullable=False)
+    bearing = db.Column(db.String(3), nullable=False)
     companies = db.relationship('Company', backref='frankendama', lazy=True)
 
 
