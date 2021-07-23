@@ -4,3 +4,5 @@ venv
 application/__init__.py
 .coverage
 application/data.db
+application/test.db
+.getenv
