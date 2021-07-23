@@ -12,9 +12,12 @@
 	* [Continuous Integration](#continuous-integration)
 * [Development](#development)
 	* [Unit Testing](#unit-testing)
-	* [Front-End Design](#front-end)
 	* [Integration Testing](#integration-testing)
 * [Footer](#footer)
+	* [Future Improvements](#future-improvements)
+	* [Author](#author)
+	* [Acknowledgements](#acknowledgements)
+
 
 ## Introduction
 
@@ -38,7 +41,7 @@ When a user of this toy creates a setup with each 5 parts from different compani
 ## Architecture
 
 ### Risk Assessment
-<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/RiskAssessment2.png" alt="Risk Assessment"/>
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/RiskAssessment3.png" alt="Risk Assessment"/>
 
 ###Trello Board
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/UserStories.png" alt="User Stories"/>
@@ -52,7 +55,6 @@ My outdated ERD can be seen below, followed by the updated version.
 My original ERD was a Many-toMany relationship-diagram which is not suitable for this project so i remade the ERD as follows:
 <div style="block;"> 
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDdraft22.png" alt="ERD Image"/>
-
 This is the current ERD for this project.
 
 Each Frankendama will have the 5 main parts for a build and each Frankendama has many companies assosciated to the full build.
@@ -64,7 +66,6 @@ Each Frankendama will have the 5 main parts for a build and each Frankendama has
 ## Development
 
 ### Unit Testing
-### Front-End
 ### Integration Testing
 
 ## Footer
