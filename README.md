@@ -74,3 +74,7 @@ Each Frankendama will have the 5 main parts for a build and each Frankendama has
 ### Author
 Marius Saunders
 ### Acknowledgements
+Stack Overflow for the assistance on one SQLALchemy query: https://stackoverflow.com/questions/68489027/sorting-and-deleting-a-1-to-many-relatiionship-in-sqlalchemy-and-flask
+
+### Versions
+26/07/21 - v1.0.0
