@@ -43,3 +43,88 @@ class TestBase(TestCase):
     def tear_down(self):
 
         db.drop_all()
+
+class TestViews(TestBase):
+
+    def test_home(self):
+        response = self.client.get(url_for('home'))
+        self.assert200(response)
+
+    def test_create(self):
+        response = self.client.get(url_for('create'))
+        self.assert200(response)
+
+    def test_update(self):
+        response = self.client.get(url_for('update', id=1))
+        self.assert200(response)
+
+class TestRead(TestBase):
+
+    def test_home(self):
+        response = self.client.get(url_for('home'))
+        assert "Taps" in response.data.decode()
+        assert "A combo of damas designed for taps" in response.data.decode()
+        assert "SK x Ceral STIK" in response.data.decode()
+        assert "Lomond Shape" in response.data.decode()
+        assert "Lomond Shape" in response.data.decode()
+        assert "72" in response.data.decode()
+        assert "Yes" in response.data.decode()
+        assert "CEREAL" in response.data.decode()
+        assert "SK" in response.data.decode()
+
+class TestUpdate(TestBase):
+
+    def test_update(self):
+        response = self.client.post(
+            url_for('update', id=1),
+            data={"description": "Check updated task"},
+            follow_redirects= True
+        )
+
+        assert "Taps" in response.data.decode()
+        assert "Check updated task" in response.data.decode()
+        assert "SK x Ceral STIK" in response.data.decode()
+        assert "Lomond Shape" in response.data.decode()
+        assert "Lomond Shape" in response.data.decode()
+        assert "72" in response.data.decode()
+        assert "Yes" in response.data.decode()
+        assert "CEREAL" in response.data.decode()
+        assert "SK" in response.data.decode()
+
+        assert "A combo of damas designed for taps" not in response.data.decode()
+
+
+    def test_update_companies(self):
+        response = self.client.post(
+            url_for('update', id=1),
+            data={"companies": "SWEETS"},
+            follow_redirects= True
+        )
+
+        assert "Taps" in response.data.decode()
+        assert "A combo of damas designed for taps" in response.data.decode()
+        assert "SK x Ceral STIK" in response.data.decode()
+        assert "Lomond Shape" in response.data.decode()
+        assert "Lomond Shape" in response.data.decode()
+        assert "72" in response.data.decode()
+        assert "Yes" in response.data.decode()
+        assert "SWEETS" in response.data.decode()
+        assert "SK" not in response.data.decode()
+        assert "CEREAL" not in response.data.decode()
+
+class TestDelete(TestBase):
+
+    def test_delete(self):
+        response = self.client.get(
+            url_for('delete', id=1),
+            follow_redirects=True
+        )
+
+        assert "Taps" not in response.data.decode()
+        assert "A combo of damas designed for taps" not in response.data.decode()
+        assert "SK x Ceral STIK" not in response.data.decode()
+        assert "Lomond Shape" not in response.data.decode()
+        assert "Lomond Shape" not in response.data.decode()
+        assert "72" not in response.data.decode()
+        assert "Yes" not in response.data.decode()
+
