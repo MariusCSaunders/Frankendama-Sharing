@@ -9,11 +9,10 @@ class Frankendama(db.Model):
     sword = db.Column(db.String(25), nullable=False)
     string = db.Column(db.String(25), nullable=False)
     bearing = db.Column(db.String(5), nullable=False)
-    #company_id = db.Column(db.Integer, db.foreignKey('company_id'), nullable=False)
     companies = db.relationship('Company', backref='frankendama', lazy=True)
 
 
 class Company(db.Model):
     company_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(25), nullable=False)
-    frankendama_id = db.Column(db.Integer, db.ForeignKey('Frankendama'), nullable=False)
+    frankendama_id = db.Column(db.Integer, db.ForeignKey('frankendama.id'), nullable=False)

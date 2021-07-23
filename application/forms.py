@@ -9,4 +9,9 @@ class FrankForm(FlaskForm):
     sword = StringField("What type of sword?")
     string = IntegerField("How long is the string in CM?")
     bearing = StringField("Does the setup have a bearing?")
+    companies = StringField("What companies are used? (Please seperate with a comma( , ))")
     submit = SubmitField("Submit")
+    
+
+
+    

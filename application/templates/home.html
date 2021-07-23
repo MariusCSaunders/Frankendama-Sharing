@@ -12,7 +12,7 @@
         td {
             width: 150px;
             text-align: center;
-            border: 1px solid black;
+            border: 1px solid rgb(0, 0, 0);
             padding: 5px;
          }
    </style>
@@ -27,6 +27,7 @@
                 <th>Sword</th>
                 <th>String Length(cm)</th>
                 <th>Bearing</th>
+                <th>Companies Used</th>
                 <th>Update</th>
                 <th>Delete</th>
             </tr>
@@ -41,6 +42,14 @@
                   <td>{{row.sword}}</td>
                   <td>{{row.string}}</td>
                   <td>{{row.bearing}}</td>
+                  <td>
+                    {% for entry in comps %}
+                        {% if entry.frankendama_id == row.id %}
+                            {{entry.name}}
+                            <br>
+                        {% endif %}
+                    {% endfor %}
+                  </td>
                   <td><a href="{{ url_for('update', id=row.id) }}"> Update </a></td>
                   <td><a href="{{ url_for('delete', id=row.id) }}"> Delete </a></td>
               </tr>
