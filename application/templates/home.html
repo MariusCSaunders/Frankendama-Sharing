@@ -1,14 +1,22 @@
+<!--Marius Saunders
+    QA Project 1
+    Frankendama Sharing
+-->
+
+<!--Home page html file
+    Has a title and Nav bar
+    Creates a table with all data content
+-->
+
+
 {% extends 'layout.html' %}
 
 {% block title %}
     <h1>Home</h1>
 {% endblock title %}
-
-
 {% block body %}
 
     <style>
- 
         td {
             width: 150px;
             text-align: center;
@@ -33,7 +41,8 @@
             </tr>
         </thead>    
         <tbody>
-        {% for row in franks %}
+            <!--Iterates through Frankendama table for as many entries as present-->
+            {% for row in franks %} 
               <tr>
                   <td>{{row.title}}</td>
                   <td>{{row.description}}</td>
@@ -43,17 +52,20 @@
                   <td>{{row.string}}</td>
                   <td>{{row.bearing.lower().title()}}</td> <!--Methods() for formating the responce of Yes and No -->
                   <td>
-                    {% for entry in comps %}
+                    <!--Iterates through Company table for as many entries as present-->
+                    {% for entry in comps %} 
+                        <!--Only displays company entries with the same id as frankendama-->
                         {% if entry.frankendama_id == row.id %}
                             {{entry.name.upper()}}
                             <br>
                         {% endif %}
                     {% endfor %}
                   </td>
+                  <!--Adds a link for Update and Delete-->
                   <td><a href="{{ url_for('update', id=row.id) }}"> Update </a></td>
                   <td><a href="{{ url_for('delete', id=row.id) }}"> Delete </a></td>
               </tr>
-          {% endfor %}
+            {% endfor %}
         </tbody>
     </table>
        
