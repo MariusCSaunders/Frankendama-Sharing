@@ -12,6 +12,7 @@
 	* [Continuous Integration](#continuous-integration)
 * [Development](#development)
 	* [Unit Testing](#unit-testing)
+	* [Front End](#front-end)
 * [Footer](#footer)
 	* [Future Improvements](#future-improvements)
 	* [Author](#author)
@@ -144,6 +145,30 @@ Unit testing is used in this project to test the Flask app routes and their func
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/JenkinsReport.png" alt="Jenkins Report">
 
 With the last entry in the jenkins build script, any tests that return a fail will set the build to fail on jenkins so that there is more readability.
+
+### Front End
+
+In this section I will demonstrate the front end of the Flask app.
+
+Create:
+<br/>
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/FrontEndCreate.png" alt="Create function on the webpage">
+
+<br/>
+Read:
+<br/>
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/FrontEndRead.png" alt="Create function on the webpage">
+
+<br/>
+Update:
+<br/>
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/FrontEndUpdate.png" alt="Create function on the webpage">
+
+<br/>
+Delete:
+<br/>
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/FrontEndDelete.png" alt="Create function on the webpage">
+
 
 ## Footer
 
