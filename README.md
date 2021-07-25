@@ -153,8 +153,11 @@ With the last entry in the jenkins build script, any tests that return a fail wi
 <li>Have a third table that would take in user information and assign it to each of their builds so that there is an author's name.</li>
 <li>Have more rugged form validation to allow correct format into the table</li>
 <li>Add CSS styling to make the overall webpage more pleasing to look at.</li>
+	
 ### Author
+	
 Marius Saunders
+	
 ### Acknowledgements
 
 <a href="https://github.com/OliverNichols">Oliver Nichols</a>
