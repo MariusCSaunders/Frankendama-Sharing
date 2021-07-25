@@ -164,12 +164,14 @@ Read:
 This is the read function of the webpage, the homepage is where all the data is stored and viewed and every action on the page redirects to here.
 
 <br/>
+<br/>
 Update:
 <br/>
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/FrontEndUpdate.png" alt="Create function on the webpage">
 <br/>
 This is the update function of the webpage, each entry in the table has an update button that goes to the create page and passes an ID that updates the exact entry.
 
+<br/>
 <br/>
 Delete:
 <br/>
