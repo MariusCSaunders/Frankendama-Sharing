@@ -110,11 +110,42 @@ This failed unit test identified and error that if it had slipped would have cau
 
 ### Continuous Integration
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/ci_pipeline.png" alt="CI pipeline">
+
+Continuous integration is deployed in this project to push fast development with the focus of automated testing. My jenkins script takes the code i have pushed to this repository and then runs both the unit testing and the integration testing. Once this action is completed the reports for the testing will be viewable on the jenkins console and can be used to change the trajectory of the project.
+
 ### Jenkins Script
+
+The jenkins build script is shown below.
+<br/>
+```
+#!/bin/bash
+
+sudo apt install chromium-chromedriver -y
+sudo apt-get install python3-venv 
+
+python3 -m venv venv
+source venv/bin/activate
+
+pip3 install -r requirements.txt 
+
+pytest tests/test_unit.py --cov=. --disable-warnings
+
+if [ -f pytest-result ] && [ $(cat pytest-result) == 'FAIL' ]; 
+	then echo "TESTING FAILED - MARKING BUILD AS FAILED"; exit 1;
+fi;
+```
 
 ## Development
 
 ### Unit Testing
+
+Unit testing is used in this project to test the Flask app routes and thier functions, these are tested by asserting the expected result from each function. Using jenkins and the build script above we can run unit tests everytime the Git push command is run and the test results with a coverage report can be viewed on the jenkins console.
+<br/>
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/JenkinsReport.png" alt="Jenkins Report">
+
+With the last entry in the jenkins build script, any tests that return a fail will set the build to fail on jenkins so that there is more readability.
+
+
 ### Integration Testing
 
 ## Footer
@@ -123,11 +154,9 @@ This failed unit test identified and error that if it had slipped would have cau
 ### Author
 Marius Saunders
 ### Acknowledgements
-My QA Trainers:
-Ryan Wright
-Oliver Nichols
-Victoria Sacre
-Savannah Vaithilingam
+
+<a href="https://github.com/OliverNichols">Oliver Nichols</a>
+
 
 <a href="https://stackoverflow.com/questions/68489027/sorting-and-deleting-a-1-to-many-relatiionship-in-sqlalchemy-and-flask">Stack Overflow</a> for the assistance on one SQLALchemy query 
 
