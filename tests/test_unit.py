@@ -44,12 +44,13 @@ class TestBase(TestCase):
         db.session.add(company2)
         db.session.commit()
 
-
+    #Destroys database after running tests
     def tearDown(self):
 
         db.session.remove()
         db.drop_all()
 
+#Tests the user is able to reach each page
 class TestViews(TestBase):
 
     def test_home_get(self):
@@ -64,7 +65,7 @@ class TestViews(TestBase):
         response = self.client.get(url_for('update', id=1))
         self.assertEqual(response.status_code, 200)
 
-
+#Tests reading data from the homepage
 class TestRead(TestBase):
 
     def test_read(self):
@@ -80,6 +81,7 @@ class TestRead(TestBase):
         self.assertIn(b'CEREAL', response.data)
         self.assertIn(b'SK', response.data)
 
+#Tests the update fucntion of the flask app
 class TestUpdate(TestBase):
 
     def test_update(self):
@@ -109,6 +111,8 @@ class TestUpdate(TestBase):
         self.assertIn(b'KUSA',response.data)
         self.assertIn(b'KUSA',response.data)
 
+
+#Tests the create function of the flask app
 class TestCreate(TestBase):
 
     def test_create(self):
@@ -139,6 +143,7 @@ class TestCreate(TestBase):
         self.assertIn(b'CEREAL',response.data)
         self.assertIn(b'CEREAL',response.data)
 
+#Tests the delete function of the flask app
 class TestDelete(TestBase):
 
     def test_delete(self):
