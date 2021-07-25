@@ -82,7 +82,7 @@ The way i documented the progress of my project overall was to use a Trello Boar
 Since the project is small scale and it has a more visual representation of progress i decided Trello was better to use over other tools such as Jira.
 <br>
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/UserStories.png" alt="User Stories"/>
-My full trello Board can be found <a href="https://trello.com/b/L9cnnpHA/user-story-qaproject">here</a>
+My full Trello Board can be found <a href="https://trello.com/b/L9cnnpHA/user-story-qaproject">here</a>
 
 Overtime i added a few extra steps to the trello board for quality of life features such as custom form validators.
 
@@ -95,12 +95,19 @@ My outdated ERD can be seen below, followed by the updated version.
 <br/>
 My original ERD was a 1-1 relationship-diagram which is not suitable for this project so i remade the ERD as follows:
 <div style="block;"> 
-<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDcompleted.png" alt="ERD Image"/>
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDcomplete.png" alt="ERD Image"/>
 This is the current ERD for this project.
 
-Each Frankendama will have the 5 main parts for a build and each Frankendama has many companies assosciated to the full build.
+I decided a simple 1-to-Many relationship was best suited for this project. Originally I would have a table for the frankendama holding the title and description and a parts table taht held all the information on the parts of the build. However, after beginning implementation of the database relationship, I realised that my original ERD was a 1-to-1 and did not cover the specifications of the project. Therefore I created a new ERD that had two tables with a 1-to-Many, frankendama table holds everything to do with the build, all the part names, title and description. Table two is called Companies and stores all the names of the companies used in the build with a foreign key to frankendama, this allows for further implementation of a list of top five most commonly used companies for their parts.
 
 ### Analysis of Testing
+
+As this is a much smaller scale project, the only testing implemented is unit testing and integration testing. Out of scope testing not implemented would include, system and acceptance testing. As I utilized a test-driven method of development, I had created tests for each part of CRUD in advanced so that during development my program would follow this. One of the biggest reliefs during the development stage was that my unit test for the Update route returned a fail once I had finished that module. Due tot eh fact that my unit test displayed a fail I was able to find the error almost immediately and fix it. The error was when a user wanted to update their entry with a different part to their build, when they changed the list of companies associate with the build and press submit, none of the previous company names where removed. 
+
+<img srv="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/TestingAnalysis.png" alt="Error found during development.">
+
+This failed unit test identified and error that if it had slipped would have caused a huuge formating error on the homepage.
+
 ### Continuous Integration
 ### Jenkins Script
 
