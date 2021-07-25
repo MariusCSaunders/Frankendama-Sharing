@@ -1,38 +1,29 @@
-#Marius Saunders
-#QA Project 1
-#Frankendama Sharing
-
-#Imports the needed modules
-from flask_testing import TestCase
-from flask_sqlalchemy import SQLAlchemy
-from flask import url_for
-import os
-
 from application import app, db
 from application.models import Company, Frankendama
+from flask import url_for
+from flask_testing import TestCase
 
-#Creates the base for all test cases
+
 class TestBase(TestCase):
 
-    # Pass in testing configurations for the app. Here we use sqlite without a persistent database for our tests.
     def create_app(self):
-
         app.config.update(
-            SQLALCHEMY_DATABASE_URI="sqlite:///test.db",
-            SECRET_KEY='TEST_SECRET_KEY',
+            SQLALCHEMY_DATABASE_URI="sqlite:///",
+            SECRET_KEY="TEST_SECRET_KEY",
             DEBUG=True,
             WTF_CSRF_ENABLED=False
         )
 
         return app
-    
-    #Testing method for setting up the test database
-    def set_up(self):
 
-        # Create table
+    
+    def setUp(self):
+        
+        #Destroys previous database and creates a new one
+        db.drop_all()
         db.create_all()
 
-        # Create test frankendama
+        #Creates a Frankendama database entry
         frank1 = Frankendama(
             title="Taps",
             description="A combo of damas designed for taps",
@@ -43,111 +34,130 @@ class TestBase(TestCase):
             bearing="Yes"
         )
 
-        # Create test companies
-        company1 = Company(name = "CEREAL", frankendama_id = 1)
-        company2 = Company(name = "SK", frankendama_id = 1)
-
-        # Save Database entries 
         db.session.add(frank1)
+
+        #Creates entries in the Company database relating to the Frankendama entry above
+        company1 = Company(name = "CEREAL", frankendama_id = 1)
+        company2 = Company(name = "SK", frankendama_id = 1)    
+    
         db.session.add(company1)
         db.session.add(company2)
-
         db.session.commit()
 
 
-    #Testing method to destroy the testing database
-    def tear_down(self):
+    def tearDown(self):
 
         db.session.remove()
         db.drop_all()
 
-
-#Testing method to test the loading of the three main pages works.
 class TestViews(TestBase):
 
-    def test_home(self):
+    def test_home_get(self):
         response = self.client.get(url_for('home'))
-        self.assert200(response)
-
-    def test_create(self):
+        self.assertEqual(response.status_code,200)
+        
+    def test_create_get(self):
         response = self.client.get(url_for('create'))
-        self.assert200(response)
+        self.assertEqual(response.status_code, 200)
 
-    def test_update(self):
+    def test_update_get(self):
         response = self.client.get(url_for('update', id=1))
-        self.assert200(response)
+        self.assertEqual(response.status_code, 200)
+
 
 class TestRead(TestBase):
 
-    def test_home(self):
-        response = self.client.get(
-            url_for('home'),
-            follow_redirects= True
-            )
+    def test_read(self):
+        response = self.client.get(url_for('home'))
+        self.assertIn(b'Taps', response.data)
+        self.assertIn(b'A combo of damas designed for taps', response.data)
+        self.assertIn(b'SK x Cereal STIK', response.data)
+        self.assertIn(b'Lomond Shape', response.data)
+        self.assertIn(b'Lomond Shape', response.data)
+        self.assertIn(b'72', response.data)
+        self.assertIn(b'Yes', response.data)
 
-        assert "Taps" in response.data.decode()
-        assert "Check updated task" in response.data.decode()
-        assert "SK x Ceral STIK" in response.data.decode()
-        assert "Lomond Shape" in response.data.decode()
-        assert "Lomond Shape" in response.data.decode()
-        assert "72" in response.data.decode()
-        assert "Yes" in response.data.decode()
-        assert "CEREAL" in response.data.decode()
-        assert "SK" in response.data.decode()
+        self.assertIn(b'CEREAL', response.data)
+        self.assertIn(b'SK', response.data)
 
 class TestUpdate(TestBase):
 
     def test_update(self):
         response = self.client.post(
             url_for('update', id=1),
-            data={"description": "Check updated task"},
-            follow_redirects= True
+            follow_redirects= True,
+            data = dict(
+                title="Waves",
+                description="A combo of damas with waves",
+                tama="Black Waves 62mm",
+                sarado="TJ kolsnik Kaizen",
+                sword="TJ kolsnik Kaizen",
+                string="58",
+                bearing="Yes",
+                companies="FRIDAY, kusa, KusA"
+            )
         )
 
-        assert "Taps" in response.data.decode()
-        assert "Check updated task" in response.data.decode()
-        assert "SK x Ceral STIK" in response.data.decode()
-        assert "Lomond Shape" in response.data.decode()
-        assert "Lomond Shape" in response.data.decode()
-        assert "72" in response.data.decode()
-        assert "Yes" in response.data.decode()
-        assert "CEREAL" in response.data.decode()
-        assert "SK" in response.data.decode()
+        self.assertIn(b'Waves',response.data)
+        self.assertIn(b'A combo of damas with waves',response.data)
+        self.assertIn(b'Black Waves 62mm',response.data)
+        self.assertIn(b'TJ kolsnik Kaizen',response.data)
+        self.assertIn(b'TJ kolsnik Kaizen',response.data)
+        self.assertIn(b'58',response.data)
+        self.assertIn(b'Yes',response.data)
+        self.assertIn(b'FRIDAY',response.data)
+        self.assertIn(b'KUSA',response.data)
+        self.assertIn(b'KUSA',response.data)
 
-        assert "A combo of damas designed for taps" not in response.data.decode()
+class TestCreate(TestBase):
 
+    def test_create(self):
 
-    def test_update_companies(self):
         response = self.client.post(
-            url_for('update', id=1),
-            data={"companies": "SWEETS"},
-            follow_redirects= True
+        url_for('create'),
+        follow_redirects= True,
+        data = dict(
+            title="Pizza",
+            description="A combo of damas with pizzas",
+            tama="62mm Boost Pizza",
+            sarado="1.5",
+            sword="TJ kolsnik Kaizen",
+            string="62",
+            bearing="Yes",
+            companies="sweets, Cereal, CEREAL"
+            )
         )
 
-        assert "Taps" in response.data.decode()
-        assert "A combo of damas designed for taps" in response.data.decode()
-        assert "SK x Ceral STIK" in response.data.decode()
-        assert "Lomond Shape" in response.data.decode()
-        assert "Lomond Shape" in response.data.decode()
-        assert "72" in response.data.decode()
-        assert "Yes" in response.data.decode()
-        assert "SWEETS" in response.data.decode()
-        assert "SK" not in response.data.decode()
-        assert "CEREAL" not in response.data.decode()
+        self.assertIn(b'Pizza',response.data)
+        self.assertIn(b'A combo of damas with pizzas',response.data)
+        self.assertIn(b'62mm Boost Pizza',response.data)
+        self.assertIn(b'1.5',response.data)
+        self.assertIn(b'1.5',response.data)
+        self.assertIn(b'62',response.data)
+        self.assertIn(b'Yes',response.data)
+        self.assertIn(b'SWEETS',response.data)
+        self.assertIn(b'CEREAL',response.data)
+        self.assertIn(b'CEREAL',response.data)
 
 class TestDelete(TestBase):
 
     def test_delete(self):
+             
         response = self.client.get(
-            url_for('delete', id=1),
-            follow_redirects=True
+        url_for('delete', id=1),
+        follow_redirects=True
         )
 
         assert "Taps" not in response.data.decode()
         assert "A combo of damas designed for taps" not in response.data.decode()
-        assert "SK x Ceral STIK" not in response.data.decode()
+        assert "SK x Cereal STIK" not in response.data.decode()
         assert "Lomond Shape" not in response.data.decode()
         assert "Lomond Shape" not in response.data.decode()
         assert "72" not in response.data.decode()
         assert "Yes" not in response.data.decode()
+        assert "CEREAL" not in response.data.decode()
+        assert "SK" not in response.data.decode()
 
+
+
+    
