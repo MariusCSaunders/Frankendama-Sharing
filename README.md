@@ -55,16 +55,16 @@ When a user of this toy creates a setup with each 5 parts from different compani
 I have created a Frankendama Sharing site, where users can upload thier favourite setups and builds in a neat format.
 Below i demonstrate how my site covers the required CRUD capability.
 
-Create:
+Create: <br>
 User can create a Frankendama made from 5 parts.
 
-Read:
+Read:<br>
 User enters the homepage where all the builds are availible in a table to read.
 
-Update:
+Update:<br>
 User has an update button on the same row as the entry needing updated.
 
-Delete:
+Delete:<br>
 User has a delete button on the ame row as the entry needing deleted.
 
 
@@ -72,25 +72,30 @@ User has a delete button on the ame row as the entry needing deleted.
 
 ### Risk Assessment
 My Risk Assessment for this project can be seen below, it has a list of risks that the project may have and has an assigned Risk/Impact value.
+<br>
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/RiskAssessment3.png" alt="Risk Assessment"/>
-As you can see as the project went new risks were discovered and I therefore added a date column.
+As you can see as the project went on risks were discovered and I therefore added a date column.
 
 ### Trello Board
 The way i documented the progress of my project overall was to use a Trello Board.
 
 Since the project is small scale and it has a more visual representation of progress i decided Trello was better to use over other tools such as Jira.
+<br>
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/UserStories.png" alt="User Stories"/>
 My full trello Board can be found <a href="https://trello.com/b/L9cnnpHA/user-story-qaproject">here</a>
+
+Overtime i added a few extra steps to the trello board for quality of life features such as custom form validators.
 
 
 ### Entity Relationship Diagram
 
 My outdated ERD can be seen below, followed by the updated version.
+<br>
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDdraft1.png" alt="Old ERD"/>
 <br/>
-My original ERD was a Many-toMany relationship-diagram which is not suitable for this project so i remade the ERD as follows:
+My original ERD was a 1-1 relationship-diagram which is not suitable for this project so i remade the ERD as follows:
 <div style="block;"> 
-<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDdraft22.png" alt="ERD Image"/>
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/QAprojectERDcompleted.png" alt="ERD Image"/>
 This is the current ERD for this project.
 
 Each Frankendama will have the 5 main parts for a build and each Frankendama has many companies assosciated to the full build.
