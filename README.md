@@ -153,21 +153,29 @@ In this section I will demonstrate the front end of the Flask app.
 Create:
 <br/>
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/FrontEndCreate.png" alt="Create function on the webpage">
+<br/>
+This is the create function of the webpage, allowing the user to enter in all the detials of the build as well as the last form for entering companies used.
 
 <br/>
 Read:
 <br/>
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/FrontEndRead.png" alt="Create function on the webpage">
+<br/>
+This is the read function of the webpage, the homepage is where all the data is stored and viewed and every action on the page redirects to here.
 
 <br/>
 Update:
 <br/>
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/FrontEndUpdate.png" alt="Create function on the webpage">
+<br/>
+This is the update function of the webpage, each entry in the table has an update button that goes to the create page and passes an ID that updates the exact entry.
 
 <br/>
 Delete:
 <br/>
 <img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/FrontEndDelete.png" alt="Create function on the webpage">
+<br/>
+This is the delete function of the webpage, like the update there is a delete button for each entry in the table. Clicking this removes that entry from the database and redirects the user to the homepage to make is disappear from the table.
 
 
 ## Footer
