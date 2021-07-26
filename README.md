@@ -189,6 +189,7 @@ This is the delete function of the webpage, like the update there is a delete bu
 <li>Have a third table that would take in user information and assign it to each of their builds so that there is an author's name.</li>
 <li>Have more rugged form validation to allow correct format into the table</li>
 <li>Add CSS styling to make the overall webpage more pleasing to look at.</li>
+<li>Added some form of integration testing, for example using Selenium to test user interaction.</li>
 	
 ### Author
 	
