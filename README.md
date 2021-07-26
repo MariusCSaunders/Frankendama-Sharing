@@ -111,6 +111,8 @@ This failed unit test identified an error that if it had slipped would have caus
 
 ### Continuous Integration
 
+<img src="https://github.com/MariusCSaunders/qa-individual-project/blob/master/images/Inkedci_pipeline_LI.jpg" alt="CI pipeline">
+
 Continuous integration is deployed in this project to push fast development with the focus of automated testing. My jenkins script takes the code I have pushed to this repository and then runs both the unit testing and the integration testing. Once this action is completed the reports for the testing will be viewable on the jenkins console and can be used to change the trajectory of the project.
 
 ### Jenkins Script
